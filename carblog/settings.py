@@ -30,6 +30,14 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'w8u9kg$5f8lv)@-ec=fuoorerjk@c@
 # для разработки нижнюю строку закоммент, верхнюю разкоммент.
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 ALLOWED_HOSTS = []
 
 
@@ -55,6 +63,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
