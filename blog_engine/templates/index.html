@@ -1,0 +1,101 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+<title>Car Blog!</title>
+{% endblock %}
+{% block content %}
+<h1 class="main_title">Main Car Blog</h1>
+<div class="filters">
+    <div class="row">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="col-sm-6">
+                <label for="sel_ord">{%trans "Show at first" %}</label>
+                <select id="sel_ord" name="order_by">
+
+                {% for key, name in order_choice %}
+                    <option value="{{key}}">{{name}}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <label for="sel_cat">{% trans "Categories" %}</label>
+                <select name="group_by" id="sel_cat" multiple>
+                    {% if group_choice %}
+                    {% for cat in group_choice %}
+                        {% if cat in group_by %}
+                        <option selected="selected">{{cat}}</option>
+                        {% else %}
+                        <option>{{cat}}</option>
+                        {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </select>
+            </div>
+            <input type="submit" name="filter_btn" value="{% trans 'Filter' %}" />
+            <input type="submit" name="unfilter_btn" value="{% trans 'Delete filters' %}"/>
+        </form>
+    </div>
+</div>
+<h2 class="txt-center">{% trans "Articles" %}:</h2>
+{% if article_list %}
+{% for article in article_list %}
+  <div class="article">
+        <h3><a href="{{ article.get_absolute_url }}">{{article.title}}</a></h3>
+      <div class="row">
+          <div class="col-sm-4">
+                {% if article.image %}
+                <img class="art_preview" src="{{article.image.url}}" alt="image"/>
+                {% else %}
+                <img class="art_preview" src="{% static 'images/pages/def_article.jpg' %}" alt="image"/>
+                {% endif %}
+            </div>
+            <div class="col-sm-8">
+                <div class="descr_preview">{{article.description}}</div>
+            </div>
+      </div>
+        <p>{% trans "Liked people" %}: {{article.like.count}} </p>
+        <div class="row">
+          <div class="col-sm-6">
+              <p><a href="{% url 'author-detail' article.author.pk %}">{{article.author.username}}</a></p>
+          </div>
+          <div class="col-sm-3">
+              {{article.date_creation}}
+          </div>
+            {% if article.date_creation != article.date_updating %}
+          <div class="col-sm-3">
+              {{article.date_updating}}
+          </div>
+            {% endif %}
+      </div>
+  </div>
+{% endfor %}
+{% else %}
+<p>{% trans "There no articles" %}</p>
+{% endif %}
+
+<script>
+    $("form select").val("{{ order_by }}");
+
+
+    //if({{group_by}} != "no"){
+    //var i;
+    //for (i = 0; i < group_by.length; i++){
+      //  $('#sel_cat option[value=' + group_by[i] + ']').val({{ group_by }});
+        //}
+    //}
+
+    //var expanded = false;
+    //function showCheckboxes() {
+      //var checkboxes = document.getElementById("checkboxes");
+      //if (!expanded) {
+        //checkboxes.style.display = "block";
+        //expanded = true;
+      //} else {
+        //checkboxes.style.display = "none";
+        //expanded = false;
+      //}
+    //}
+</script>
+{% endblock %}

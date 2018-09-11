@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% load static %}
+ {% load i18n %}
+{% block content %}
+{% if view.is_current_user %}
+{{ form.media }}
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="{% trans 'Update'%}" />
+</form>
+{% else %}
+<p>{% trans "You don't have permission to sea this page"%}</p>
+<a href="{% url 'index' %}">{% trans 'Main'%}</a>
+{% endif %}
+{% endblock %}

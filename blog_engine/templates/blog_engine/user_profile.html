@@ -1,0 +1,80 @@
+{% extends "base_generic.html" %}
+ {% load static %}
+ {% load i18n %}
+{% block content %}
+{% if is_user %}
+{% if avatar %}
+    <img class="profile_img" src="{{avatar.url}}" alt="image"/>
+{% else %}
+    <img class="profile_img" src="{% static 'images/pages/profile_icon.png' %}" alt="avatar"/>
+{% endif %}
+ <h1>{% trans 'Username'%}: {{ user_co.username }}</h1>
+<p>{% trans 'Email'%}: {{ user_co.email }}</p>
+<p>{% trans 'Last name'%}: {{ user_co.last_name }}</p>
+<p>{% trans 'First name'%}: {{ user_co.first_name }}</p>
+<a href="{% url 'profile-update' user_co.pk %}">{% trans 'Edit profile data'%}</a>
+<a href="{% url 'article-add' %}">{% trans 'Add new article'%}</a>
+{% if articles %}
+    <h3>{% trans 'List of your articles'%}:</h3>
+    {% for article in articles %}
+    <h1>{% trans 'Title'%}:<a href="{% url 'article-detail' article.pk %}">{{ article.title }}</a></h1>
+    <p>{{article.date_creation}} | {{article.date_updating}}</p>
+    <p>{{article.description}}</p>
+    <a href="{% url 'article-update' article.pk %}">{% trans 'Edit article'%}</a>
+    <a href="{% url 'article-delete' article.pk %}">{% trans 'Delete article'%}</a>
+    {% endfor %}
+    <br/>
+    <div class="pagination">
+        <span class="step-links">
+            {% if articles.has_previous %}
+                <a href="?page=1">&laquo; {% trans 'first'%}</a>
+                <a href="?page={{ articles.previous_page_number }}">{% trans 'previous'%}</a>
+            {% endif %}
+
+            <span class="current">
+                {% blocktrans with pg_numb=articles.number pg_all=articles.paginator.num_pages %}Page {{ pg_numb }} of {{ pg_all }}.{% endblocktrans %}
+            </span>
+
+            {% if articles.has_next %}
+                <a href="?page={{ articles.next_page_number }}">{% trans 'next'%}</a>
+                <a href="?page={{ articles.paginator.num_pages }}">{% trans 'last'%} &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    <br/>
+{% else %}
+<p>{% trans 'You do not have any articles'%}</p>
+{% endif %}
+{% if liked_art %}
+    <h3>{% trans 'Articles you like'%}:</h3>
+    {% for article in liked_art %}
+    <h1>{% trans 'Title'%}: <a href="{% url 'article-detail' article.pk %}">{{ article.title }}</a></h1>
+     <p>{% trans 'Author'%}: <a href="{% url 'author-detail' article.author.pk %}">{{article.author.username}}</a></p>
+    <p>{% trans 'Last update'%}: {{article.date_updating}}</p>
+    <p>{{article.description}}</p>
+    {% endfor %}
+     <br/>
+    <div class="pagination">
+        <span class="step-links">
+            {% if liked_art.has_previous %}
+                <a href="?page=1">&laquo; {% trans 'first'%}</a>
+                <a href="?page={{ liked_art.previous_page_number }}">{% trans 'previous'%}</a>
+            {% endif %}
+
+            <span class="current">
+                {% blocktrans with pg_numb=liked_art.number pg_all=liked_art.paginator.num_pages %}Page {{ pg_numb }} of {{ pg_all }}.{% endblocktrans %}
+            </span>
+
+            {% if liked_art.has_next %}
+                <a href="?page={{ liked_art.next_page_number }}">{% trans 'next'%}</a>
+                <a href="?page={{ liked_art.paginator.num_pages }}">{% trans 'last'%} &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+    <br/>
+{% endif %}
+{% else %}
+<p>{% trans 'You do not have access to this page'%}</p>
+<a href="{% url 'index' %}">{% trans 'Main page'%}</a>
+{% endif %}
+{% endblock %}

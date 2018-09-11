@@ -1,0 +1,36 @@
+{% extends "base_generic.html" %}
+{% load static %}
+ {% load i18n %}
+{% load thumbnail %}
+{% block content %}
+    <h1>{% trans 'Username'%}: {{ user.username }}</h1>
+    {% if avatar %}
+        {% thumbnail avatar "x300" crop="center" format="PNG" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="avatar"/>
+        {% endthumbnail %}
+    {% else %}
+        {% thumbnail 'images/pages/profile_icon.png' "x300" crop="center" format="PNG" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="avatar"/>
+        {% endthumbnail %}
+    {% endif %}
+    <p>{% trans 'Email'%}: {{ user.email }}</p>
+    <p>{% trans 'Last name'%}: {{ user.last_name }}</p>
+    <p>{% trans 'First name'%}: {{ user.first_name }}</p>
+    <p id="subs_rat">{% trans 'All subscribers'%}: {{count_subs}}</p>
+    {% if request.user.is_authenticated %}
+         <input type="hidden" name="action" value="subscribe">
+        <button id="subscribe_control">{{subscribed}}</button>
+    {% else %}
+        <p>{% trans 'If you want to subscribe to the author, you must sign in'%}</p>
+    {% endif %}
+    {% if articles %}
+        {% for article in articles %}
+        <h1>Title:<a href="{% url 'article-detail' article.pk %}">{{ article.title }}</a></h1>
+        <p>{{article.date_creation}} | {{article.date_updating}}</p>
+        <p>{{article.description}}</p>
+        {% endfor %}
+    {% else %}
+    <p>{% trans "Current author doesn't have own articles"%}</p>
+    {% endif %}
+    <script src="{% static 'js/scripts.js' %}"></script>
+{% endblock %}

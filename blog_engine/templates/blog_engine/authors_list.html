@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+ {% load i18n %}
+{% load cache %}
+{% get_current_language as LANGUAGE_CODE %}
+{% block content %}
+ {% cache 600 authors_list LANGUAGE_CODE request.user %}
+    {% if count %}
+        {% for key, value in count.items %}
+        <h3>{% trans 'User'%}:</h3>
+        <p>{% trans 'Username'%}:<a href="{% url 'author-detail' key.pk %}"> {{ key }} </a>{% trans 'Count of articles'%}: {{ value }}</p>
+         <p>{% trans 'Last name'%}: {{ key.last_name }} {% trans 'First name'%}: {{ key.first_name }}</p>
+        <p>{% trans 'Email' %}: {{ key.email }}</p>
+        {% endfor %}
+    {% else %}
+    <p>{% trans 'There is no author'%}</p>
+    {% endif %}
+{% endcache %}
+{% endblock %}

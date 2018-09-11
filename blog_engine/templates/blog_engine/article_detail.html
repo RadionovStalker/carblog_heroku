@@ -1,0 +1,87 @@
+{% extends "base_generic.html" %}
+{% load static %}
+ {% load i18n %}
+{% load cache %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load thumbnail %}
+{% block content %}
+ {% cache 600 article_detail LANGUAGE_CODE request.user article.id %}
+    <h1>{% trans "Title"%}: {{ article.title }}</h1>
+{% if article.image %}
+    <p>{% trans "Main image" %}: </p>
+    {% thumbnail article.image "x500" crop="center" as im %}
+    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="image"/>
+    {% empty %}
+    <p>{{ article.image.url }}</p>
+    {% endthumbnail %}
+{% endif %}
+{% if gallery %}
+<p>{% trans "Gallery" %}: </p>
+{% endif %}
+{% for image_obj in gallery %}
+      {% thumbnail image_obj.image "x400" crop="right" as im %}
+    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="image"/>
+    {% empty %}
+    <p>{{ article.image.url }}</p>
+    {% endthumbnail %}
+{% endfor %}
+    <p><strong>{% trans "Author"%} :</strong> <a href="{% url 'author-detail' article.author.pk %}">{{ article.author.username }}</a></p>
+    {% if article.date_creation != article.date_updating %}
+    <p>{{article.date_creation}} | {{article.date_updating}}</p>
+    {% else %}
+    <p>{{article.date_creation}}</p>
+    {% endif %}
+    <p>{{article.description}}</p>
+    <p>{{article.body | safe}}</p>
+    <p id="rating">{% trans 'Rating'%}: {{like_count}}</p>
+    {% if request.user.is_authenticated %}
+         <input type="hidden" name="type" value="like">
+        <button id="like_control">{{liked}}</button>
+    {%endif%}
+{% endcache %}
+    <p>{% trans 'All comments'%}: {{com_count}}.</p>
+    {% if request.user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="com_text" placeholder="{trans 'Enter your comment here...'%}"></textarea>
+        <input type="submit" value="{% trans 'Leave a comment'%}">
+    </form>
+    {% else %}
+    <p>{% trans 'If you want to leave a comment, you must log in' %}</p>
+    {% endif %}
+    {% if comments != 'none' %}
+        {% for com in comments %}
+        <div class="art_comment">
+            <p class="com_author">{%trans 'Author'%}: <a href="{% url 'author-detail' com.author.pk %}">{{ com.author.username }}</a></p>
+            {% if com.date_creation != com.date_updating %}
+             <p>{{com.date_creation}} | {{com.date_updating}}</p>
+            {% else %}
+            <p>{{com.date_creation}}</p>
+            {% endif %}
+             {% if com.parent_comment %}
+            <p><span style="font-style: italic; font-weight=bold;">{{com.parent_comment.author.username}}</span>,
+                <span style="font-style: italic;">"{{com.parent_comment.text}}"</span></p>
+           {% endif %}
+            <p class="com_text">{{com.text}}</p>
+            <div id="answer{{com.id}}"></div>
+            <form method="get">
+            {% if request.user.is_authenticated %}
+                <button name="ans_btn" type="button" value="1" onclick="answer({{com.id}},'{{com.author.username}}', this)">{% trans 'Reply'%}</button>
+            {% endif %}
+            {% if request.user == com.author %}
+                 <button name="upd_btn" type="button" value="1" onclick="update_comment({{com.id}},'{{com.text}}', this)">{% trans 'Edit'%}</button>
+                <button name="del_btn" type="button" value="1" onclick="delete_comment({{com.id}}, this)">{% trans 'Delete'%}</button>
+            </form>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>{%trans 'No comments yet.'%}</p>
+        {% if request.user.is_authenticated %}
+        <p>{% trans 'You can leave the first comment!'%}</p>
+        {% endif %}
+    {% endif %}
+
+<script src="{% static 'js/scripts.js' %}"></script>
+{% endblock %}
+

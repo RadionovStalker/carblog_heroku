@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  {% block title %}<title>Car blog</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    {% load static %}
+    {% load i18n %}
+    {% load cache %}
+    {% get_current_language as LANGUAGE_CODE %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="wrapper">
+      <div class="container general_cont">
+          {% cache 600 log_in_out LANGUAGE_CODE request.user %}
+           <div class="row">
+              <div class="col-sm-7">
+                <img src="{% static 'images/pages/tp_logo.png' %}" alt="logo"/>
+              </div>
+              <div class="col-sm-5">
+                    {% if request.user.is_authenticated %}
+                  <ul class="auth_bar">
+                    <li><a href="{% url 'user-profile' user.username %}"> {{ request.user.get_username }}</a></li>
+                    <li><a href="{% url 'logout'%}?next={{request.path}}">{% trans "Logout" %}</a></li>
+                   {% else %}
+                     <li><a href="{% url 'login'%}?next={{request.path}}">{% trans "Login" %}/{% trans "registration" %}</a></li>
+                  </ul>
+                   {% endif %}
+              </div>
+          </div>
+          {% endcache %}
+          <div class="row">
+              <div class="col-sm-12">
+                  <p>{% trans "Change Language"%}: </p>
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                        <select name="language" id="sel_lang">
+                        {% get_available_languages as LANGUAGES %}
+                        {% get_language_info_list for LANGUAGES as languages %}
+                        {% for language in languages %}
+                        <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %}selected{% endif %}/>
+                        {{ language.name_local }} ({{ language.code }})
+                        </option>
+                        {% endfor %}
+                        </select>
+                    <input type="submit" value="{% trans 'Ok' %}">
+                </form>
+              </div>
+          </div>
+        <div class="row">
+            <div class="sidebar col-sm-12">
+                <ul>
+                    <li><a href = "{% url 'index' %}" >{% trans "Blog" %}</a></li>
+                    <li><a href = "{% url 'authors' %}" >{% trans "Authors" %}</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 ">
+          {% block content %}{% endblock %}
+          {% block pagination %}
+          {% if is_paginated %}
+              <div class="pagination">
+                  <span class="page-links">
+                      {% if page_obj.has_previous %}
+                          <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">{% trans "previous" %}</a>
+                      {% endif %}
+                      <span class="page-current">
+                          {% blocktrans with pg_numb=page_obj.number pg_all=page_obj.paginator.num_pages %}Page {{ pg_numb }} of {{ pg_all }}.{% endblocktrans %}
+                      </span>
+                      {% if page_obj.has_next %}
+                          <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">{% trans "next" %}</a>
+                      {% endif %}
+                  </span>
+              </div>
+          {% endif %}
+          {% endblock %}
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

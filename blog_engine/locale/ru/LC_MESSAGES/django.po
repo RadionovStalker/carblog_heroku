@@ -1,0 +1,317 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-10 12:51+0300\n"
+"PO-Revision-Date: 2018-09-10 12:52+0202\n"
+"Last-Translator: b'  <admin@gmail.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.0\n"
+
+#: .\blog_engine\models.py:47
+msgid "Date of creation"
+msgstr "Дата создания"
+
+#: .\blog_engine\models.py:48
+msgid "Date of updating"
+msgstr "Дата редактирования"
+
+#: .\blog_engine\models.py:49
+msgid "Like"
+msgstr "Понравилось"
+
+#: .\blog_engine\models.py:51
+msgid "Image"
+msgstr "Изображение"
+
+#: .\blog_engine\models.py:53
+msgid "Category"
+msgstr "Категория"
+
+#: .\blog_engine\models.py:56
+#: .\blog_engine\templates\blog_engine\article_detail.html:9
+#: .\blog_engine\templates\blog_engine\user_profile.html:20
+#: .\blog_engine\templates\blog_engine\user_profile.html:51
+msgid "Title"
+msgstr "Заголовок"
+
+#: .\blog_engine\models.py:57
+msgid "Description"
+msgstr "Описание"
+
+#: .\blog_engine\templates\base_generic.html:32
+msgid "Logout"
+msgstr "Выйти"
+
+#: .\blog_engine\templates\base_generic.html:34
+msgid "Login"
+msgstr "Зайти"
+
+#: .\blog_engine\templates\base_generic.html:34
+msgid "registration"
+msgstr "регистрация"
+
+#: .\blog_engine\templates\base_generic.html:42
+msgid "Change Language"
+msgstr "Сменить язык"
+
+#: .\blog_engine\templates\base_generic.html:55
+#: .\blog_engine\templates\blog_engine\add_article.html:13
+msgid "Ok"
+msgstr "Принять"
+
+#: .\blog_engine\templates\base_generic.html:62
+msgid "Blog"
+msgstr "Блог"
+
+#: .\blog_engine\templates\base_generic.html:63
+msgid "Authors"
+msgstr "Авторы"
+
+#: .\blog_engine\templates\base_generic.html:75
+#: .\blog_engine\templates\blog_engine\user_profile.html:31
+#: .\blog_engine\templates\blog_engine\user_profile.html:61
+msgid "previous"
+msgstr "предыдущая"
+
+#: .\blog_engine\templates\base_generic.html:78
+#: .\blog_engine\templates\blog_engine\user_profile.html:35
+#: .\blog_engine\templates\blog_engine\user_profile.html:65
+#, python-format
+msgid "Page %(pg_numb)s of %(pg_all)s."
+msgstr "Страница %(page_obj.number)s из %(page_obj.paginator.num_pages)s."
+
+#: .\blog_engine\templates\base_generic.html:81
+#: .\blog_engine\templates\blog_engine\user_profile.html:39
+#: .\blog_engine\templates\blog_engine\user_profile.html:69
+msgid "next"
+msgstr "следующая"
+
+#: .\blog_engine\templates\blog_engine\add_article.html:16
+#: .\blog_engine\templates\blog_engine\update_article.html:13
+#: .\blog_engine\templates\blog_engine\update_profile.html:21
+msgid "You don't have permission to sea this page"
+msgstr "У Вас нет прав , чтобы просмотреть данную страницу"
+
+#: .\blog_engine\templates\blog_engine\add_article.html:17
+#: .\blog_engine\templates\blog_engine\update_article.html:14
+msgid "Main"
+msgstr "Главная"
+
+#: .\blog_engine\templates\blog_engine\article_delete.html:3
+msgid "Are you sure to delete article "
+msgstr "Вы уверены, что хотите удалить статью"
+
+#: .\blog_engine\templates\blog_engine\article_delete.html:4
+#: .\blog_engine\templates\blog_engine\article_detail.html:73
+msgid "Delete"
+msgstr "Сбросить фильтры"
+
+#: .\blog_engine\templates\blog_engine\article_delete.html:5
+msgid "Back"
+msgstr "Назад"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:11
+msgid "Main image"
+msgstr "Основное изображение"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:19
+msgid "Gallery"
+msgstr "Галерея"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:28
+#: .\blog_engine\templates\blog_engine\article_detail.html:55
+#: .\blog_engine\templates\blog_engine\user_profile.html:52
+msgid "Author"
+msgstr "Авторы"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:36
+msgid "Rating"
+msgstr "Главная"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:42
+msgid "All comments"
+msgstr "Всего комментариев"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:47
+msgid "Leave a comment"
+msgstr "Оставить комментарий"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:50
+msgid "If you want to leave a comment, you must log in"
+msgstr ""
+"Если Вы хотите оставить комментарий, Вы должны войти в свою учетную запись"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:69
+msgid "Reply"
+msgstr "Ответить"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:72
+msgid "Edit"
+msgstr "Редактировать"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:79
+msgid "No comments yet."
+msgstr "Пока нет ни одного комментария."
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:81
+msgid "You can leave the first comment!"
+msgstr "Ваш комментарий может быть первым!"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:9
+msgid "User"
+msgstr "Пользователь"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:10
+#: .\blog_engine\templates\blog_engine\user_detail.html:6
+#: .\blog_engine\templates\blog_engine\user_profile.html:11
+msgid "Username"
+msgstr "Псеводоним"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:10
+msgid "Count of articles"
+msgstr "Количество статей"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:11
+#: .\blog_engine\templates\blog_engine\user_detail.html:17
+#: .\blog_engine\templates\blog_engine\user_profile.html:13
+msgid "Last name"
+msgstr "Фамилия"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:11
+#: .\blog_engine\templates\blog_engine\user_detail.html:18
+#: .\blog_engine\templates\blog_engine\user_profile.html:14
+msgid "First name"
+msgstr "Имя"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:12
+#: .\blog_engine\templates\blog_engine\user_detail.html:16
+#: .\blog_engine\templates\blog_engine\user_profile.html:12
+msgid "Email"
+msgstr "Электронный адресс"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:15
+msgid "There is no author"
+msgstr "Нет ни одного автора"
+
+#: .\blog_engine\templates\blog_engine\update_article.html:10
+msgid "Update"
+msgstr "Обновить"
+
+#: .\blog_engine\templates\blog_engine\update_profile.html:17
+msgid "Change password"
+msgstr "Сменить пароль"
+
+#: .\blog_engine\templates\blog_engine\update_profile.html:18
+msgid "Update profile"
+msgstr "Обновить профиль"
+
+#: .\blog_engine\templates\blog_engine\update_profile.html:22
+#: .\blog_engine\templates\blog_engine\user_profile.html:78
+msgid "Main page"
+msgstr "Главная страница"
+
+#: .\blog_engine\templates\blog_engine\user_detail.html:19
+msgid "All subscribers"
+msgstr "Всего подписчиков"
+
+#: .\blog_engine\templates\blog_engine\user_detail.html:24
+msgid "If you want to subscribe to the author, you must sign in"
+msgstr ""
+"Если вы хотите подписаться на автора, вы должны войти свою учетную запись"
+
+#: .\blog_engine\templates\blog_engine\user_detail.html:33
+msgid "Current author doesn't have own articles"
+msgstr "У Вас нет ни одной статьи"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:15
+msgid "Edit profile data"
+msgstr "Редактировать данные профиля"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:16
+msgid "Add new article"
+msgstr "Добавить новую статью"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:18
+msgid "List of your articles"
+msgstr "Список Ваших статей"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:23
+msgid "Edit article"
+msgstr "Редактировать статью"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:24
+msgid "Delete article"
+msgstr "Сбросить фильтры"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:30
+#: .\blog_engine\templates\blog_engine\user_profile.html:60
+msgid "first"
+msgstr "первая"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:40
+#: .\blog_engine\templates\blog_engine\user_profile.html:70
+msgid "last"
+msgstr "последняя"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:46
+msgid "You do not have any articles"
+msgstr "У Вас нет ни одной статьи"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:49
+msgid "Articles you like"
+msgstr "Статьи, которые Вам нравятся"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:53
+msgid "Last update"
+msgstr "Последнее обновление"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:77
+msgid "You do not have access to this page"
+msgstr "У Вас нет доступа к данной странице"
+
+#: .\blog_engine\templates\index.html:14
+msgid "Show at first"
+msgstr "Показывать сначала"
+
+#: .\blog_engine\templates\index.html:23
+#| msgid "Category"
+msgid "Categories"
+msgstr "Категории"
+
+#: .\blog_engine\templates\index.html:36
+msgid "Filter"
+msgstr "Фильтровать"
+
+#: .\blog_engine\templates\index.html:37
+msgid "Delete filters"
+msgstr "Сбросить фильтры"
+
+#: .\blog_engine\templates\index.html:41
+msgid "Articles"
+msgstr "Статьи"
+
+#: .\blog_engine\templates\index.html:58
+msgid "Liked people"
+msgstr "Понравилось людям"
+
+#: .\blog_engine\templates\index.html:75
+msgid "There no articles"
+msgstr "Нет ни одной статьи"
+
+#: .\blog_engine\templates\register.html:8
+msgid "Registration"
+msgstr "Регистрация"
+
+#~ msgid "Welcome to"
+#~ msgstr "Добро пожаловать, в"

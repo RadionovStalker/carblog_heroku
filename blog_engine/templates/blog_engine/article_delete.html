@@ -1,0 +1,6 @@
+{% load i18n %}
+<form method="post">{% csrf_token %}
+    <p>{% trans 'Are you sure to delete article ' %} "{{ object.title }}"?</p>
+    <input type="submit" value="{% trans 'Delete' %}">
+    <a href="{% url 'user-profile' object.author %}">{% trans "Back" %}</a>
+</form>

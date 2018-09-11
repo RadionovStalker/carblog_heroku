@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+{% if is_user %}
+{{ form.media }}
+{% if avatar %}
+    <img class="profile_img" src="{{avatar.url}}" alt="image"/>
+{% else %}
+    <img class="profile_img" src="{% static 'images/pages/profile_icon.png' %}" alt="avatar"/>
+{% endif %}
+ <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+    {{ form }}
+    </table>
+     <a href="{% url 'password_reset' %}">{% trans 'Change password'%}</a>
+    <input type="submit" value="{% trans 'Update profile'%}" />
+</form>
+{% else %}
+<p>{% trans "You don't have permission to sea this page"%}</p>
+<a href="{% url 'index' %}">{% trans 'Main page' %}</a>
+{% endif %}
+{% endblock %}

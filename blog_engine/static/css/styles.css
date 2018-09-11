@@ -1,0 +1,59 @@
+.wrapper{
+	background-color: grey;
+}
+.general_cont{
+	background-color: #00FFF7;
+}
+.sidebar{
+	text-align: center;
+	background-color: lightgrey;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.sidebar ul{
+	list-style: none;
+}
+.sidebar ul li{
+	display: inline;
+}
+.sidebar ul li a{
+	font-size: 35px;
+}
+.article{
+	border: 2px black solid;
+    border-radius: 15px;
+    padding-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    -webkit-box-shadow: 0px 0px 62px -3px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 62px -3px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 62px -3px rgba(0,0,0,0.75);
+}
+.profile_img{
+    width: 250px;
+}
+.art_preview{
+    max-height: 200px;
+}
+
+.auth_bar{
+	list-style: none;
+}
+.auth_bar li{
+	display: inline;
+	font-size: 25px;
+}
+.main_title{
+	text-align: center;
+	margin-bottom: 15px;
+}
+.filters{
+    text-align: center;
+    background-color: lightgrey;
+}
+.txt-center{
+	text-align: center;
+}
+.descr_preview{
+	
+}

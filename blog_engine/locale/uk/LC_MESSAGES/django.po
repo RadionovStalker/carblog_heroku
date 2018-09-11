@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-10 12:51+0300\n"
+"PO-Revision-Date: 2018-09-10 12:53+0202\n"
+"Last-Translator: b'  <admin@gmail.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Translated-Using: django-rosetta 0.9.0\n"
+
+#: .\blog_engine\models.py:47
+msgid "Date of creation"
+msgstr "Дата створення"
+
+#: .\blog_engine\models.py:48
+msgid "Date of updating"
+msgstr "Дата редактування"
+
+#: .\blog_engine\models.py:49
+msgid "Like"
+msgstr "Сподобалось"
+
+#: .\blog_engine\models.py:51
+msgid "Image"
+msgstr "Зображення"
+
+#: .\blog_engine\models.py:53
+msgid "Category"
+msgstr "Категорія"
+
+#: .\blog_engine\models.py:56
+#: .\blog_engine\templates\blog_engine\article_detail.html:9
+#: .\blog_engine\templates\blog_engine\user_profile.html:20
+#: .\blog_engine\templates\blog_engine\user_profile.html:51
+msgid "Title"
+msgstr "Заголовок"
+
+#: .\blog_engine\models.py:57
+msgid "Description"
+msgstr "Опис"
+
+#: .\blog_engine\templates\base_generic.html:32
+msgid "Logout"
+msgstr "Вийти"
+
+#: .\blog_engine\templates\base_generic.html:34
+msgid "Login"
+msgstr "Увійти"
+
+#: .\blog_engine\templates\base_generic.html:34
+msgid "registration"
+msgstr "регістрація"
+
+#: .\blog_engine\templates\base_generic.html:42
+msgid "Change Language"
+msgstr "Змінити мову"
+
+#: .\blog_engine\templates\base_generic.html:55
+#: .\blog_engine\templates\blog_engine\add_article.html:13
+msgid "Ok"
+msgstr "Прийняти"
+
+#: .\blog_engine\templates\base_generic.html:62
+msgid "Blog"
+msgstr "Блог"
+
+#: .\blog_engine\templates\base_generic.html:63
+msgid "Authors"
+msgstr "Автори"
+
+#: .\blog_engine\templates\base_generic.html:75
+#: .\blog_engine\templates\blog_engine\user_profile.html:31
+#: .\blog_engine\templates\blog_engine\user_profile.html:61
+msgid "previous"
+msgstr "попередня"
+
+#: .\blog_engine\templates\base_generic.html:78
+#: .\blog_engine\templates\blog_engine\user_profile.html:35
+#: .\blog_engine\templates\blog_engine\user_profile.html:65
+#, python-format
+msgid "Page %(pg_numb)s of %(pg_all)s."
+msgstr "Сторінка %(page_obj.number)s з %(page_obj.paginator.num_pages)s."
+
+#: .\blog_engine\templates\base_generic.html:81
+#: .\blog_engine\templates\blog_engine\user_profile.html:39
+#: .\blog_engine\templates\blog_engine\user_profile.html:69
+msgid "next"
+msgstr "наступна"
+
+#: .\blog_engine\templates\blog_engine\add_article.html:16
+#: .\blog_engine\templates\blog_engine\update_article.html:13
+#: .\blog_engine\templates\blog_engine\update_profile.html:21
+msgid "You don't have permission to sea this page"
+msgstr "У Вас немає дозволу на перегляд даної сторінки"
+
+#: .\blog_engine\templates\blog_engine\add_article.html:17
+#: .\blog_engine\templates\blog_engine\update_article.html:14
+msgid "Main"
+msgstr "Головна"
+
+#: .\blog_engine\templates\blog_engine\article_delete.html:3
+msgid "Are you sure to delete article "
+msgstr "Ви впевнені, що хочете видалити цю статтю"
+
+#: .\blog_engine\templates\blog_engine\article_delete.html:4
+#: .\blog_engine\templates\blog_engine\article_detail.html:73
+msgid "Delete"
+msgstr "Видалити"
+
+#: .\blog_engine\templates\blog_engine\article_delete.html:5
+msgid "Back"
+msgstr "Назад"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:11
+msgid "Main image"
+msgstr "Основне зображення"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:19
+msgid "Gallery"
+msgstr "Галерея"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:28
+#: .\blog_engine\templates\blog_engine\article_detail.html:55
+#: .\blog_engine\templates\blog_engine\user_profile.html:52
+msgid "Author"
+msgstr "Автор"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:36
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:42
+msgid "All comments"
+msgstr "Усього коментарів"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:47
+msgid "Leave a comment"
+msgstr "Залишити коментар"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:50
+msgid "If you want to leave a comment, you must log in"
+msgstr ""
+"Якщо Ви бажаєте залишити коментар, Ви маєте зайти у свій обліковий запис"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:69
+msgid "Reply"
+msgstr "Відповісти"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:72
+msgid "Edit"
+msgstr "Редагувати"
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:79
+msgid "No comments yet."
+msgstr "Поки що немає коментарів."
+
+#: .\blog_engine\templates\blog_engine\article_detail.html:81
+msgid "You can leave the first comment!"
+msgstr "Ваш коментар може бути першим!"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:9
+msgid "User"
+msgstr "Користувач"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:10
+#: .\blog_engine\templates\blog_engine\user_detail.html:6
+#: .\blog_engine\templates\blog_engine\user_profile.html:11
+msgid "Username"
+msgstr "Псевдонім"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:10
+msgid "Count of articles"
+msgstr "Кількість статей"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:11
+#: .\blog_engine\templates\blog_engine\user_detail.html:17
+#: .\blog_engine\templates\blog_engine\user_profile.html:13
+msgid "Last name"
+msgstr "Прізвище"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:11
+#: .\blog_engine\templates\blog_engine\user_detail.html:18
+#: .\blog_engine\templates\blog_engine\user_profile.html:14
+msgid "First name"
+msgstr "Ім'я"
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:12
+#: .\blog_engine\templates\blog_engine\user_detail.html:16
+#: .\blog_engine\templates\blog_engine\user_profile.html:12
+msgid "Email"
+msgstr "Електронна адреса "
+
+#: .\blog_engine\templates\blog_engine\authors_list.html:15
+msgid "There is no author"
+msgstr "Немає авторів"
+
+#: .\blog_engine\templates\blog_engine\update_article.html:10
+msgid "Update"
+msgstr "Оновити"
+
+#: .\blog_engine\templates\blog_engine\update_profile.html:17
+msgid "Change password"
+msgstr "Змінити пароль"
+
+#: .\blog_engine\templates\blog_engine\update_profile.html:18
+msgid "Update profile"
+msgstr "Оновити профіль"
+
+#: .\blog_engine\templates\blog_engine\update_profile.html:22
+#: .\blog_engine\templates\blog_engine\user_profile.html:78
+msgid "Main page"
+msgstr "Головна сторінка"
+
+#: .\blog_engine\templates\blog_engine\user_detail.html:19
+msgid "All subscribers"
+msgstr "Усього підписників"
+
+#: .\blog_engine\templates\blog_engine\user_detail.html:24
+msgid "If you want to subscribe to the author, you must sign in"
+msgstr ""
+"Якщо ви хочете підписатися на автора, ви повинні увійти у свій обліковий "
+"запис"
+
+#: .\blog_engine\templates\blog_engine\user_detail.html:33
+msgid "Current author doesn't have own articles"
+msgstr "Цей автор не має своїх статей"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:15
+msgid "Edit profile data"
+msgstr "Редагувати дані профіля"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:16
+msgid "Add new article"
+msgstr "Додати нову статтю"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:18
+msgid "List of your articles"
+msgstr "Список Ваших статей"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:23
+msgid "Edit article"
+msgstr "Редагувати статтю"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:24
+msgid "Delete article"
+msgstr "Видалити статтю"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:30
+#: .\blog_engine\templates\blog_engine\user_profile.html:60
+msgid "first"
+msgstr "перша"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:40
+#: .\blog_engine\templates\blog_engine\user_profile.html:70
+msgid "last"
+msgstr "остання"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:46
+msgid "You do not have any articles"
+msgstr "Ви не маєте своїх статей"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:49
+msgid "Articles you like"
+msgstr "Статті , які Вам подобаються"
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:53
+msgid "Last update"
+msgstr "Останнє оновлення "
+
+#: .\blog_engine\templates\blog_engine\user_profile.html:77
+msgid "You do not have access to this page"
+msgstr "У Вас немає прав для перегляду цієї сторінки"
+
+#: .\blog_engine\templates\index.html:14
+msgid "Show at first"
+msgstr "Показувати спочатку"
+
+#: .\blog_engine\templates\index.html:23
+#| msgid "Category"
+msgid "Categories"
+msgstr "Категорії"
+
+#: .\blog_engine\templates\index.html:36
+msgid "Filter"
+msgstr "Фільтрувати"
+
+#: .\blog_engine\templates\index.html:37
+msgid "Delete filters"
+msgstr "Скинути фільтри"
+
+#: .\blog_engine\templates\index.html:41
+msgid "Articles"
+msgstr "Статті"
+
+#: .\blog_engine\templates\index.html:58
+msgid "Liked people"
+msgstr "Сподобалось людям"
+
+#: .\blog_engine\templates\index.html:75
+msgid "There no articles"
+msgstr "Немає статей"
+
+#: .\blog_engine\templates\register.html:8
+msgid "Registration"
+msgstr "Реєстрація"
+
+#~ msgid "Welcome to"
+#~ msgstr "Ласкаво просимо, до"

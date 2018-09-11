@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+{% block title %}
+<title>Main Car Blog</title>
+{% endblock %}
+{% block content %}
+<h1>Home Car Blog</h1>
+
+<h2>Last articles</h2>
+{% if article_list %}
+{% for article in article_list %}
+  <div class="article">
+      <h3>{{article.title}}</h3>
+      <div class="row">
+          <div class="col-sm-6">
+              <p>{{article.author__username}}</p>
+          </div>
+          <div class="col-sm-3">
+              {{article.date_creation}}
+          </div>
+          <div class="col-sm-3">
+              {{article.date_updating}}
+          </div>
+      </div>
+      <p>{{article.description}}</p>
+  </div>
+{% endfor %}
+{% else %}
+<p>There no articles</p>
+{% endif %}
+{% endblock %}
